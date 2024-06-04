@@ -10,7 +10,7 @@ namespace Services
 {
     public class PolygonService
     {
-        public const int Srid = 4326;
+        private const int Srid = 4326;
         private readonly SpatialDbContext _dbContext;
 
         public PolygonService(SpatialDbContext dbContext)
