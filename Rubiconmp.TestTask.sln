@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{35A5A45E-C534-4FA1-9BE0-920906023B89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{5AF4188A-67C8-4BD0-8125-0621560A5E6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polygon.Api", "Src\Polygon.Api\Polygon.Api.csproj", "{B48F08A7-9023-4976-89F0-A021BE69D4B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polygon.Services", "Src\Polygon.Services\Polygon.Services.csproj", "{128C6A64-795A-4105-A93D-6875831586D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polygon.FunctionalTests", "Tests\Polygon.FunctionalTests\Polygon.FunctionalTests.csproj", "{B990D431-052D-48A8-AE26-27B17FB331CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polygon.Services.Tests", "Tests\Polygon.Services.Tests\Polygon.Services.Tests.csproj", "{0ABD68F9-1BBC-4480-8B28-C89D540282C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B48F08A7-9023-4976-89F0-A021BE69D4B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B48F08A7-9023-4976-89F0-A021BE69D4B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B48F08A7-9023-4976-89F0-A021BE69D4B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B48F08A7-9023-4976-89F0-A021BE69D4B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{128C6A64-795A-4105-A93D-6875831586D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{128C6A64-795A-4105-A93D-6875831586D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{128C6A64-795A-4105-A93D-6875831586D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{128C6A64-795A-4105-A93D-6875831586D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B990D431-052D-48A8-AE26-27B17FB331CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B990D431-052D-48A8-AE26-27B17FB331CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B990D431-052D-48A8-AE26-27B17FB331CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B990D431-052D-48A8-AE26-27B17FB331CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ABD68F9-1BBC-4480-8B28-C89D540282C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABD68F9-1BBC-4480-8B28-C89D540282C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABD68F9-1BBC-4480-8B28-C89D540282C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABD68F9-1BBC-4480-8B28-C89D540282C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B48F08A7-9023-4976-89F0-A021BE69D4B2} = {5AF4188A-67C8-4BD0-8125-0621560A5E6A}
+		{128C6A64-795A-4105-A93D-6875831586D0} = {5AF4188A-67C8-4BD0-8125-0621560A5E6A}
+		{B990D431-052D-48A8-AE26-27B17FB331CF} = {35A5A45E-C534-4FA1-9BE0-920906023B89}
+		{0ABD68F9-1BBC-4480-8B28-C89D540282C8} = {35A5A45E-C534-4FA1-9BE0-920906023B89}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C5D0D79-DEC4-469E-97AD-12B250F9C9AE}
+	EndGlobalSection
+EndGlobal
