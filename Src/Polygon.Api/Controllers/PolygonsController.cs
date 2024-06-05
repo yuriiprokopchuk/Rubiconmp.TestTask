@@ -33,13 +33,22 @@ namespace Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreatePolygon(CreatePolygon createPolygon)
+        public ActionResult<int> CreatePolygon(CreatePolygon createPolygon)
         {
             var createPolygonDto = _mapper.Map<CreatePolygonDto>(createPolygon);
 
-            _polygonService.CreatePolygon(createPolygonDto);
+            var id = _polygonService.CreatePolygon(createPolygonDto);
 
-            return Ok();
+            return id;
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult DeletePolygon(int id)
+        {
+            _polygonService.DeletePolygon(id);
+
+            return NoContent();
         }
     }
 }

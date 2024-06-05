@@ -18,7 +18,7 @@ namespace Services
             _dbContext = dbContext;
         }
 
-        public void CreatePolygon(CreatePolygonDto createPolygonDto)
+        public int CreatePolygon(CreatePolygonDto createPolygonDto)
         {
             var coordinates = createPolygonDto.CoordinateDtos.Select(u => new Coordinate(u.X, u.Y)).ToList();
             coordinates.Add(coordinates.First());  // Closing the polygon
@@ -32,6 +32,8 @@ namespace Services
             _dbContext.SpatialEntities.Add(spatialEntity);
 
             _dbContext.SaveChanges();
+
+            return spatialEntity.Id;
         }
 
         public PolygonDto[] GetPolygons(CoordinateDto[]? coordinateDtos = null)
@@ -60,6 +62,17 @@ namespace Services
                         Y = n.Y
                     }).ToArray()
                 }).ToArray();
+        }
+
+        public void DeletePolygon(int id)
+        {
+            var spatialEntitie = _dbContext.SpatialEntities.FirstOrDefault(u => u.Id == id);
+
+            if (spatialEntitie == null) throw new Exception("Not found");
+
+            _dbContext.SpatialEntities.Remove(spatialEntitie);
+
+            _dbContext.SaveChanges();
         }
     }
 }

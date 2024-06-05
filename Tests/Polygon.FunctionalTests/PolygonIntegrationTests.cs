@@ -37,6 +37,10 @@ namespace Polygon.FunctionalTests
             if (!httpResponseMessage.IsSuccessStatusCode)
                 throw new Exception("Polygon is not created");
 
+            var createPolygonResponse = await httpResponseMessage.Content.ReadAsStringAsync();
+
+            int id = JsonConvert.DeserializeObject<int>(createPolygonResponse);
+
             httpResponseMessage = await _client.GetAsync($"{Path}/segment/50.453462/30.510630/50.468118/30.461706");
 
             if (!httpResponseMessage.IsSuccessStatusCode)
@@ -49,6 +53,11 @@ namespace Polygon.FunctionalTests
             polygons.Should().NotBeNullOrEmpty();
 
             polygons.Should().HaveCountGreaterThanOrEqualTo(1);
+
+            httpResponseMessage = await _client.DeleteAsync($"{Path}/{id}");
+
+            if (!httpResponseMessage.IsSuccessStatusCode)
+                throw new Exception("Deleting polygon is not worked");
         }
     }
 }
