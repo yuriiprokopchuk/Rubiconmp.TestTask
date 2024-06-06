@@ -10,7 +10,7 @@ namespace Polygon.FunctionalTests
     {
         private readonly WebApplicationFactory<Program> _factory;
         private readonly HttpClient _client;
-        protected const string Path = "https://localhost:7043/api/polygons";
+        private const string Path = "https://localhost:7043/api/polygons";
 
         public PolygonIntegrationTests(WebApplicationFactory<Program> factory)
         {
@@ -35,7 +35,7 @@ namespace Polygon.FunctionalTests
             var httpResponseMessage = await _client.PostAsync(Path, createPolygonContent);
 
             if (!httpResponseMessage.IsSuccessStatusCode)
-                throw new Exception("Polygon is not created");
+                throw new Exception("Polygon creation doesn't work");
 
             var createPolygonResponse = await httpResponseMessage.Content.ReadAsStringAsync();
 
@@ -44,7 +44,7 @@ namespace Polygon.FunctionalTests
             httpResponseMessage = await _client.GetAsync($"{Path}/segment/50.453462/30.510630/50.468118/30.461706");
 
             if (!httpResponseMessage.IsSuccessStatusCode)
-                throw new Exception("Getting polygons by segment is not worked");
+                throw new Exception("Getting polygons by segment doesn't work");
 
             var response = await httpResponseMessage.Content.ReadAsStringAsync();
 
@@ -57,7 +57,7 @@ namespace Polygon.FunctionalTests
             httpResponseMessage = await _client.DeleteAsync($"{Path}/{id}");
 
             if (!httpResponseMessage.IsSuccessStatusCode)
-                throw new Exception("Deleting polygon is not worked");
+                throw new Exception("Deleting a polygon doesn't work");
         }
     }
 }
